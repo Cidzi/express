@@ -6,6 +6,21 @@
     <div>
         <h2>Hello Welcome Page</h2>
         <p>What do U want??</p>
+        {{#each allPost}}
+            <div style="background-color: rgb(209, 110, 110);">
+                <h4><a href="/p/{{ this.id }}">{{ this.title }}</a></h4>
+                <p>
+                    <span>{{ this.from }}</span>
+                    <span>{{ this.createdAtText }}</span>
+                </p>
+                {{#if this.commentsCount }}
+                    <p>{{ this.commentsCount }} Comment</p>
+                {{else}}
+                    <p>No Comment</p>
+                {{/if}}
+            </div>
+
+        {{/each}}
     </div>
     {{> siteFooter }}
 </body>

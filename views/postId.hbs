@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-{{> baseHead customTitle='Post All | ' }}
+{{> baseHead customTitle=customTitle }}
 <body>
     {{> siteHeader }}
-    <div>
-        <h2>Post!!</h2>
-        <p>Question No.</p>
-    </div>
+    {{#if onePost}}
+        <div style="background-color: rgb(231, 169, 169);">
+            <h2>{{onePost.title}}</h2>
+            <p>
+                <span>{{ onePost.from }}</span>
+                <span>{{ onePost.createdAtText }}</span>
+            </p>
+        </div>
+    {{else}}
+    {{/if}}
     {{> siteFooter }}
 </body>
 </html>
